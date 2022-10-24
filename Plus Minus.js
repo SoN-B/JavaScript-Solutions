@@ -13,6 +13,12 @@ let currentLine = 0; // 처음 입력은 0인덱스에
 
 process.stdin.on("data", function (inputStdin) {
     inputString += inputStdin; // 사용자로부터 입력을 받아, inputString에 저장
+    /* 추가설명
+    보통 평상시 입력은 상시 엔터를 동반하지만, 코딩테스트의 입력은 줄바꿈 포함 그 입력 표본을 전부 받는 것이기에
+    표본상 줄바꿈이 존재해도 사용자가 엔터를 입력하기 전까지는 입력으로 처리함
+    
+    즉, 여기서 inputString에는 줄바꿈 포함 표본 전체가 처음에 한 번만 입력된다.
+    */
 });
 
 process.stdin.on("end", function () {
