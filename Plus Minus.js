@@ -45,6 +45,7 @@ function plusMinus(arr) {
             zeros++;
         }
     }
+
     console.log((positives / arrLength).toFixed(6)); // toFixed() : 소수점 자릿수 지정
     console.log((negatives / arrLength).toFixed(6));
     console.log((zeros / arrLength).toFixed(6));
