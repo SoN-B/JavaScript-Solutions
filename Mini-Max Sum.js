@@ -1,3 +1,8 @@
+/**
+ * 양수 5개의 정수가 주어져, 그중 4개의 총합 min, max를 구하는 문제
+ * min, max 순으로 출력
+ */
+
 "use strict";
 
 process.stdin.resume();
