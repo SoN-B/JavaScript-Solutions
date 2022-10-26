@@ -27,21 +27,26 @@ function readLine() {
  */
 
 function miniMaxSum(arr) {
-    let test = arr.sort(function (a, b) {
+    arr.sort(function (a, b) {
         return a - b;
     });
 
-    let min = 0;
-    let max = 0;
+    let sum_min = 0;
+    let sum_max = 0;
 
     for (let i = 1; i <= 4; i++) {
-        max += arr[i];
+        sum_max += arr[i];
     }
     for (let i = 3; i >= 0; i--) {
-        min += arr[i];
+        sum_min += arr[i];
     }
 
-    console.log(min, max);
+    console.log(sum_min, sum_max);
+
+    // let sum = arr.reduce((a, b) => a + b);
+    // let maxVal = Math.max(...arr);
+    // let minVal = Math.min(...arr);
+    // console.log((sum - maxVal) + ' ' + (sum - minVal));
 }
 
 function main() {
