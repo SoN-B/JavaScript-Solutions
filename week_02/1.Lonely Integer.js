@@ -1,3 +1,7 @@
+/**
+ * 입력으로 주어지는 배열 속 한 쌍의 숫자들 중, 단 한 개만 존재하는 수를 찾는 문제.
+ */
+
 "use strict";
 
 const fs = require("fs");
@@ -30,7 +34,16 @@ function readLine() {
  */
 
 function lonelyinteger(a) {
-    // Write your code here
+    // 수 정렬 -> 0, 0, 1, 1, 2, 3, 3
+    a.sort(function (a, b) {
+        return a - b;
+    });
+
+    // 수를 2개씩 나눠 생각해 볼 수 있는데, 해당 인덱스와 다음 인덱스 수를 비교하여 다를 때, 그 수를 결과값으로 출력하면 된다.
+    // 따라서 증감식은 x += 2
+    for (let x = 0; x < a.length; x += 2) {
+        if (a[x] !== a[x + 1]) return a[x];
+    }
 }
 
 function main() {
