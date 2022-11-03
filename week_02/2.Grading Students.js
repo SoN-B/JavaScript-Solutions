@@ -1,3 +1,9 @@
+/**
+ * Sam 교수의 시험 점수 반올림 방법
+ * 1. 38점 아래 무조건 낙제 즉, 반올림 X
+ * 2. 나머지 점수들은 그 점수의 다음 5의 배수와의 차에서 3보다 적을 시, 반올림 O
+ */
+
 "use strict";
 
 const fs = require("fs");
@@ -33,12 +39,14 @@ function gradingStudents(grades) {
     let result = [];
 
     for (let x of grades) {
-        if (x < 38 || x % 5 === 0) result.push(x);
+        if (x < 38 || x % 5 === 0) result.push(x); // 5로 나누어 떨어지면 반올림 신경 X
         else if (x % 10 < 5) {
-            if (parseInt(x / 10) * 10 + 5 - x < 3) result.push(parseInt(x / 10) * 10 + 5);
+            // 1 ~ 4
+            if (parseInt(x / 10) * 10 + 5 - x < 3) result.push(parseInt(x / 10) * 10 + 5); // if x = 73, push 75
             else result.push(x);
         } else if (x % 10 > 5) {
-            if (parseInt(x / 10) * 10 + 10 - x < 3) result.push(parseInt(x / 10) * 10 + 10);
+            // 6 ~ 9
+            if (parseInt(x / 10) * 10 + 10 - x < 3) result.push(parseInt(x / 10) * 10 + 10); // if x = 78, push 80
             else result.push(x);
         }
     }
