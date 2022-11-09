@@ -1,3 +1,8 @@
+/**
+ * 팬그램 맞는지 여부 출력 - 대소문자를 무시
+ * 팬그램은 알파벳의 모든 문자를 포함하는 문자열
+ */
+
 "use strict";
 
 const fs = require("fs");
@@ -30,7 +35,15 @@ function readLine() {
  */
 
 function pangrams(s) {
-    // Write your code here
+    let letters = [];
+    for (let letter of s) {
+        const ltr = letter.toLowerCase();
+        // 공백이 아니고, 문자열 배열 속에 속해있지 않는 문자라면 삽입한다.
+        if (!letters.includes(ltr) && letter != " ") letters.push(ltr);
+    }
+
+    return letters.length == 26 ? "pangram" : "not pangram";
+    // 그 후, 길이가 26라면(알파벳 개수 = 26) pangram
 }
 
 function main() {
