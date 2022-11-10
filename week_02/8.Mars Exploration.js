@@ -63,6 +63,13 @@ function marsExploration(s) {
     }
 
     return result;
+
+    // const message = "SOS";
+    // let count = 0;
+    // [...s].forEach((letter, index) => {
+    //     if(letter !== message[(index > 2 ? index % 3 : index)]) count++; // 0, 1, 2 까진 그냥 index를 따라감
+    // })
+    // return count;
 }
 
 function main() {
