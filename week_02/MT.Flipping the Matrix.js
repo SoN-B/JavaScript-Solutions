@@ -1,3 +1,10 @@
+/**
+ * 2n * 2n의 행렬을 입력받아 좌측 상단 1사분면에 서로 다른 위치들의 최댓값들을 찾아, 행과 열을 뒤집어가며 삽입하여 최댓값들의 합을 구하는 문제
+ * 그냥 뿔뿔이 흩어져 있는 서로 다른 위치들에 존재하는 최댓값들을 모두 더해주기만 하면 됩니다.
+ *
+ * 행렬의 크기는 최대 256 * 256
+ */
+
 "use strict";
 
 const fs = require("fs");
@@ -34,45 +41,45 @@ function flippingMatrix(matrix) {
     let sum = 0;
 
     // if matrix.length -> 6이라면, 6 x 6 행렬을 뜻함
-    // 대충값이 matrix[1] = { ?, ?, ?, ?, ?, ? }
+    // 대충 값이 matrix[1] = { ?, ?, ?, ?, ?, ? }
     //         matrix[2] = { ?, ?, ?, ?, ?, ? }
     //         matrix[3] = { ?, ?, ?, ?, ?, ? }
     //         . . .
     //         matrix[5] = { ?, ?, ?, ?, ?, ? }
-    // 이런식으로 들어옵니다.
+    // 이런 식으로 들어옵니다.
 
     // 0 1 2
     for (let y = 0; y < matrix.length / 2; y++) {
         subMatrix.push(Array(matrix.length / 2).fill(0));
-        // 좌측 상단의 숫자들만 보는것이니 전체 9 * 4(사분면개수) = 36개중 최대값이 들어갈 9개만봅니다.
-        // 0 0 0 (첫번째 수행시 생성)
-        // 0 0 0 (두번째 수행시 생성)
-        // 0 0 0 (세번째 //)
+        // 좌측 상단의 숫자들만 보는 것이니 전체 9 * 4(사분면 개수) = 36개 중 최댓값이 들어갈 9개만 봅니다.
+        // 0 0 0 (첫 번째 수행 시 생성)
+        // 0 0 0 (두 번째 수행 시 생성)
+        // 0 0 0 (세 번째 //)
 
-        // 0 1 2
+        // 0 1 2, 2n * 2n이니 -> matrix.length / 2
         for (let x = 0; x < matrix.length / 2; x++) {
-            // 1사분면의 최댓값찾기
+            // 1사분면의 최댓값 찾기
             if (matrix[y][x] > subMatrix[y][x]) {
                 subMatrix[y][x] = matrix[y][x];
             }
 
-            // 2사분면
+            // 2사분면 ~
             if (matrix[y][matrix.length - 1 - x] > subMatrix[y][x]) {
                 subMatrix[y][x] = matrix[y][matrix.length - 1 - x];
             }
 
-            // 3사분면
+            // 3사분면 ~
             if (matrix[matrix.length - 1 - y][x] > subMatrix[y][x]) {
                 subMatrix[y][x] = matrix[matrix.length - 1 - y][x];
             }
 
-            // 4사분면
+            // 4사분면 ~
             if (matrix[matrix.length - 1 - y][matrix.length - 1 - x] > subMatrix[y][x]) {
                 subMatrix[y][x] = matrix[matrix.length - 1 - y][matrix.length - 1 - x];
             }
 
             sum += subMatrix[y][x];
-            // ! 0 0 -> 첫번째 수행시 (! 자리에 최댓값존재)
+            // ! 0 0 -> 첫 번째 수행 시 (! 자리에 최댓값 존재)
             // 0 0 0
             // 0 0 0
         }
@@ -106,3 +113,5 @@ function main() {
 
     ws.end();
 }
+
+// https://www.hackerrank.com/challenges/flipping-the-matrix/forum/comments/1160360 그림참고
