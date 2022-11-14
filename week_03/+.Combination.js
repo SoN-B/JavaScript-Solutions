@@ -1,50 +1,4 @@
 // 조합 알고리즘
-/**
- * if) input = [2,1,3], 2 처리과정
- *
- * fixed = 2
- * [2,1,3], 2
- * [1,3], 1 -> return [[1],[3]]
- *
- * map((combination) => [fixed, ...combination]) -> 2,1 2,3
- *
- * fixed = 1
- * [3], 1 -> return [[3]]
- *
- * map((combination) => [fixed, ...combination]) -> 1,3
- *
- * fixed = 3
- * [], 1 -> return [[]]
- *
- * map((combination) => [fixed, ...combination]) -> X
- *
- * 결과값 return -> [[2,1],[2,3],[1,3]]
- */
-
-/**
- * if) input = [2,1,3], 3 처리과정
- *
- * [2,1,3], 3
- * [1,3], 2
- * [3], 1 -> return [[3]]
- * ------------- [1,3]
- * fixed = 1
- * [3], 1 -> return [[3]]
- * [[3]].map((combination) => [fixed, ...combination]) -> [[1,3]]
- *
- * fixed = 3
- * [], 1 -> return []
- * [].map((combination) => [fixed, ...combination]) -> []
- *
- * result => [[1,3]] return
- * ------------- [2,1,3]
- * fixed = 2
- * [[1,3]].map((combination) => [fixed, ...combination]) -> []
- * results -> [[2,1,3]]
- *
- * ...
- * return = [[2,1,3]]
- */
 
 const getCombinations = function (arr, selectNumber) {
     const results = [];
@@ -66,8 +20,8 @@ const getCombinations = function (arr, selectNumber) {
  *
  *  반복 1)
  *  1을 선택(고정)하고 -> 나머지 [2,3,4] 중에서 2개씩 조합을 구한다. 그리고 그 각각을 고정했던 1에 이어붙인다.
- *      2을 선택(고정)하고 -> 나머지 [3,4] 중에서 1개씩 조합을 구한다. 그리고 그 각각을 고정했던 2에 이어붙인다.
- *          [[2,3], [2,4]]
+ *      2을 선택(고정)하고 -> 나머지 [3,4] 중에서 1개씩 조합을 구한다. 그리고 그 각각을 고정했던 2에 이어붙인다. // selectNumber === 1인 순간, [3,4] -> [[3], [4]]가 되어 리턴됩니다.
+ *          [[2,3], [2,4]] // 그리고, 현재 fixed 값인 2와 리턴된 [[3], [4]] 값을 map으로 조합합니다.
  *      3을 선택(고정)하고 -> 나머지 [4] 중에서 1개씩 조합을 구한다. 그리고 그 각각을 고정했던 3에 이어붙인다.
  *          [[3,4]]
  *      [[1,2,3], [1,2,4], [1,3,4]] 저장

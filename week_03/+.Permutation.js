@@ -1,3 +1,5 @@
+// 순열 알고리즘
+
 const getPermutations = function (arr, selectNumber) {
     const results = [];
     if (selectNumber === 1) return arr.map((value) => [value]); // 1개씩 택할 때, 바로 모든 배열의 원소 return
@@ -40,3 +42,6 @@ const getPermutations = function (arr, selectNumber) {
  *
  * 결과) [[1,2,3], [1,2,4], [1,3,2], [1,3,4], [1,4,2], [1,4,3], ... [4,3,2]]
  */
+
+// 조합과 다른 점은 배열의 처음부터 선택(고정)하면서 나머지 배열을 구할 때 고정된 값 뒤에 있는 값들에 대해서 순열을 구하는게 아니라,
+// 고정된 값을 제외한 모든 원소에 대해서 순열을 구해야 한다는 것이다.
