@@ -1,4 +1,5 @@
 // 순열 알고리즘
+// 서로 다른 n개중에 r개를 선택하는 경우의 수를 의미합니다. (순서 상관 있음)
 
 const getPermutations = function (arr, selectNumber) {
     const results = [];
