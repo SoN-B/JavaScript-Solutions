@@ -33,7 +33,25 @@ function readLine() {
  */
 
 function twoArrays(k, A, B) {
-    // Write your code here
+    A.sort(function (a, b) {
+        return a - b;
+    });
+    B.sort(function (a, b) {
+        return a - b;
+    });
+    B.reverse();
+
+    var flag = true;
+    for (var i = 0; i < A.length; i++) {
+        if (A[i] + B[i] < k) {
+            flag = false;
+        }
+    }
+    if (flag == true) {
+        return "YES";
+    } else {
+        return "NO";
+    }
 }
 
 function main() {
