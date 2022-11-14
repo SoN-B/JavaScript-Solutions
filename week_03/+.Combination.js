@@ -90,3 +90,5 @@ const getCombinations = function (arr, selectNumber) {
  *
  * 결과) [[1,2,3], [1,2,4], [1,3,4], [2,3,4]]
  */
+
+// https://pul8219.github.io/algorithm/algorithm-permutation-and-combination/
