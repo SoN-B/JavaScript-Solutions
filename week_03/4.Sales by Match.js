@@ -59,6 +59,22 @@ function sockMerchant(n, ar) {
     return result;
 }
 
+// if) ar = [10, 20, 10, 10, 30, 20]
+//
+// function sockMerchant(n, ar) {
+//     let result = 0;
+//     ar.sort(); -> [10, 10, 10, 20, 20, 30]
+//
+//     for(let i = 0; i < n; i++){
+//         if(ar[i] == ar[i+1]){ 정렬후, 현재 위치의 수와 그 다음의 수가 같은지만 되는 거였음 -> +1쌍
+//             i++; 여기서도 i++ 함으로써 반복 i++과 더불어 i가 2씩 증가함 (pair의 체크를 위해서 2개씩 증가)
+//             result++;
+//         }
+//     }
+//
+//     return result;
+// }
+
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
