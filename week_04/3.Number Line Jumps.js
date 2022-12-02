@@ -61,6 +61,16 @@ function kangaroo(x1, v1, x2, v2) {
     }
 }
 
+// function kangaroo(x1, v1, x2, v2) {
+//     // equation - 방정식
+//     // x1 + x(이동횟수) * v1 = x2 + x * v2 -> 각 위치에서 정해진 속도별로 움직이고 그 값이 같은 순간 리턴
+//     // x * v1 - x * v2 = x2 - x1
+//     // x * (v1 - v2) = x2 - x1
+//     // x = (x2 - x1) / (v1 - v2)
+//     const x = (x2 - x1) / (v1 - v2) -> x가 딱 떨어지는 정수이고 0보다 커야지만 만났다고 볼 수 있음
+//     return Number.isInteger(x) && x >= 0 ? 'YES' : 'NO'
+// }
+
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
