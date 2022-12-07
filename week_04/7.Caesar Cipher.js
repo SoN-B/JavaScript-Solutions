@@ -31,21 +31,17 @@ const shiftCharGen = (char, sv) => {
     const ac = char.charCodeAt();
     let av;
     
-    if(ac >= 65 && ac <= 90){
-        av = ac + sv % 26; // rotation  
-        if(av > 90){
-            av = 64 + (av - 90);
-        };
+    if(ac >= 65 && ac <= 90) { // 대문자
+        av = ac + (sv % 26); 
+        // 알파벳 개수는 총 26개이기에, 더할 숫자가 26을 넘어가면 그 나머지를 더한다.
+        if(av > 90) av = 64 + (av - 90); // 최대 문자인 Z,z를 넘어갈 시, 다시처음부터
         return String.fromCharCode(av);
-    }else if(ac >= 97 && ac <= 122){
-        av = ac + sv % 26;
-        if(av > 122){
-            av = 96 + (av - 122);
-        };
+    } else if(ac >= 97 && ac <= 122) { // 소문자
+        av = ac + (sv % 26);
+
+        if(av > 122) av = 96 + (av - 122);
         return String.fromCharCode(av);
-    }else{
-        return char;
-    };
+    } else return char;
 };
 
 function caesarCipher(s, k) {
