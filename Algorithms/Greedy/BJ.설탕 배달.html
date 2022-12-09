@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 주어진 무게들로 만들 수 있는 최소 가짓수
+        function check(n) {
+            let count = 0;
+            while (true) {
+                if (n % 5 === 0) {
+                    // 최대한 적게 배달할 수 있는 5킬로그램 봉지를 많이 배달할 수 있도록, 값이 5로 나누어 떨어질 때 그 즉시 5킬로그램의 봉지 개수가 정해지도록 해줍니다.
+                    console.log(n / 5 + count);
+                    break;
+                }
+                    
+                if (0 > n) {
+                    console.log(-1); // 0 아래 값이 나올 경우는 정확하게 봉지의 개수를 측정할 수 없으므로 -1
+                    break;
+                }
+        
+                count++; // count의 수가 늘어난 다는 것은 그만큼 3킬로그램 봉지를 추가했다는 뜻
+                n -= 3; // while문을 돌려 현재 N킬로그램에서 3을 계속 빼주면서 조건을 비교
+            }
+        }
+
+        check(18); // 18킬로그램의 배달을 위해, 담을 수 있는 3, 5 킬로그램의 봉지 개수의 최소 개수
+    </script>
+</body>
+</html>
+
+<!-- 문제 출처: www.acmicpc.net/problem/2839 -->

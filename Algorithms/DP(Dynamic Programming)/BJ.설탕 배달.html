@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 주어진 무게들로 만들 수 있는 최소 가짓수
+        let dp = Array(5000).fill(0);
+        function check(n) {
+            // 3kg와 5kg를 만드는 가장 최소의 봉지수는 1
+	        // 따라서 dp[3]과 dp[5]는 무조건 1
+            dp[3] = dp[5] = 1;	
+
+            // 3과 5 다음인 6부터 for loop 순회
+            for (let i = 6; i <= n; i++) {
+                if (dp[i - 3]) dp[i] = dp[i - 3] + 1;
+
+                // 이미 dp[i-3]에 값이 존재할때 dp[i]가 업데이트 됐었을 수 있다.
+		        // 만약 dp[i]에 값이 없다면 dp[i] = dp[i-5] +1 로 업데이트
+                if (dp[i - 5]) dp[i] = dp[i] ? Math.min(dp[i] , dp[i - 5] + 1) : dp[i - 5] + 1;
+                // i kg를 달성하려면 이 전에 계산한 (i-3)kg, (i-5)kg를 만들 수 있는 가짓수 중 작은 것에 1을 더하면 현재 i kg을 채울 수 있는 최소의 봉지수
+            }
+            console.log(dp[n] == 0 ? -1 : dp[n]); // 7같은경우, 절대로 3과 5를 조합하여 만들 수가 없다. dp[7] = 0 -> -1
+        }
+
+        check(18); // 18킬로그램의 배달을 위해, 담을 수 있는 3, 5 킬로그램의 봉지 개수의 최소 개수
+    </script>
+</body>
+</html>
+
+<!-- 문제 출처: www.acmicpc.net/problem/2839 -->
