@@ -61,6 +61,20 @@ function gamingArray(arr) {
     return player;
 }
 
+// function gamingArray(arr) { - 결국엔, 배열수의 양에 따라 두 사람이 할 수 있는 게임의 수 가 정해져 있음.
+//     let ct = 0;
+//     let max = 0;
+    
+//     for(let i = 0 ; i < arr.length; i++){
+//       if(arr[i] > max){ // 첫 요소는 무조건 삽입
+//           max = arr[i];
+//           ct++
+//       }; 
+//     };
+    
+//     return ct % 2 ? 'BOB' : 'ANDY';
+// }
+
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
