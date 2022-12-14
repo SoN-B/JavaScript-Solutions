@@ -1,5 +1,10 @@
 /**
+ * 강력한 비밀번호를 만든다.
  * 
+ * 패스워드 최소 길이 6
+ * 숫자, 영대소문자, 특수문자 최소 1개씩포함
+ * 
+ * 이럴경우, 주어진 문자열에서 몇개를 변경해야하는가
  */
 
 'use strict';
@@ -75,7 +80,10 @@ function minimumNumber(n, password) {
 //     if(!special.test(password)){
 //         count += 1
 //     }
-//     if(n + count < 6){
+//     if(n + count < 6){ 
+//     추가해야할 문자 종류 < 추가해야할 문자 개수 (count < 6 - n)
+//     추가해야할게 더 많다는건 추가하면서 종류의 문제도 자동으로 해결되기 때문에
+//     그냥 6 - n
 //         return count = 6 - n
 //     }
 //     return count
