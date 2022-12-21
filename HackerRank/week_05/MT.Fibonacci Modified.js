@@ -42,7 +42,7 @@ function fibonacciModified(t1, t2, n) {
     if(n === 1) return t1;
     if(n === 2) return t2;
     return BigInt(fibonacciModified(t1, t2, n-2)) + BigInt((fibonacciModified(t1, t2, n-1) * fibonacciModified(t1, t2, n-1)));
-}
+} // n이 최대 20이라 딱히 메모이제이션 같은거 안씀
 
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
