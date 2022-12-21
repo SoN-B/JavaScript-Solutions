@@ -85,3 +85,23 @@ function main() {
 
     countApplesAndOranges(s, t, a, b, apples, oranges);
 }
+
+// ignore above this line
+// function main() {
+//     var s_temp = readLine().split(' ');
+//     var s = parseInt(s_temp[0]);
+//     var t = parseInt(s_temp[1]);
+//     var a_temp = readLine().split(' ');
+//     var a = parseInt(a_temp[0]);
+//     var b = parseInt(a_temp[1]);
+//     var m_temp = readLine().split(' ');
+//     var m = parseInt(m_temp[0]);
+//     var n = parseInt(m_temp[1]);
+//     apple = readLine().split(' ');
+//     apple = apple.map(Number);
+//     orange = readLine().split(' ');
+//     orange = orange.map(Number);
+    
+//     process.stdout.write(apple.map(_a => _a + a).filter(_a => _a >= s && _a <= t).length + '\n'); // 필터의 조건 체크후, length로 반환 길이 리턴
+//     process.stdout.write(orange.map(o => o + b).filter(o => o >= s && o <= t).length + '\n');
+// }
