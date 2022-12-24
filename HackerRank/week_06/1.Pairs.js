@@ -1,3 +1,9 @@
+/**
+ * Ex) 두수의 차이가 k = 1이 되는 쌍의 갯수찾기
+ * arr = [1, 2, 3]
+ * 2 - 1, 3 - 2, 4 - 3 -> 3개
+ */
+
 'use strict';
 
 const fs = require('fs');
@@ -39,6 +45,22 @@ function pairs(k, arr) {
     }
     return result;
 }
+
+// 정렬후, 두 포인터의 접근
+// var i=0,j=1,count=0;
+    
+//     while(j < n) {
+//         var diff = nums[j] - nums[i];
+        
+//         if (diff == k) {
+//             count++;
+//             j++;
+//         } else if (diff > k) {
+//             i++;
+//         } else if (diff < k) {
+//             j++;
+//         }
+//     }
 
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
