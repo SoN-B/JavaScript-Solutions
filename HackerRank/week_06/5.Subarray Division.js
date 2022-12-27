@@ -44,6 +44,12 @@ function birthday(s, d, m) {
     return result;
 }
 
+// for (let i = 0, l <= s.length - m; i++) {
+// 	if (s.slice(i, i + m).reduce((x, y) => x + y) === d) {
+// 		result++;
+// 	}
+// }
+
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
