@@ -37,19 +37,21 @@ function minimumBribes(q) {
     for(let i=0;i<q.length-1;i++) {
         let originValue = q[i];
         if(arr[i] !== originValue) {
-        if(arr[i+1] !== originValue) {
-            if(arr[i+2] !== originValue) {
-            return 'Too chaotic';
+            if(arr[i+1] !== originValue) {
+                if(arr[i+2] !== originValue) {
+                return 'Too chaotic';
+                }
+                
+                let temp = arr[i+2];
+                arr[i+2] = arr[i+1];
+                arr[i+1] = temp;
+                answer++;
             }
-            let temp = arr[i+2];
-            arr[i+2] = arr[i+1];
-            arr[i+1] = temp;
+
+            let temp = arr[i+1];
+            arr[i+1] = arr[i];
+            arr[i] = temp;
             answer++;
-        }
-        let temp = arr[i+1];
-        arr[i+1] = arr[i];
-        arr[i] = temp;
-        answer++;
         }
     }
     return answer;
