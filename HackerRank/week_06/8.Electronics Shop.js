@@ -49,6 +49,19 @@ function getMoneySpent(keyboards, drives, b) {
     return result;
 }
 
+// function getMoneySpent(keyboards, drives, b) {
+//     let max = -1;
+//     for (let i = 0; i < keyboards.length; i++) {
+//         for (let j = 0; j < drives.length; j++) {
+//             let pair = keyboards[i] + drives[j];
+//             if (pair > max && pair <= b) {
+//                 max = pair;
+//             }
+//         }
+//     }
+//     return max;
+// }
+
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
