@@ -63,4 +63,5 @@ process.stdin.on("end", function () {
     processData(_input);
 });
 
-// 참고: https://velog.io/@wonhee010/Stack-2%EA%B0%9C%EB%A1%9C-Queue-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0
+// 참고: https://velog.io/@wonhee010/Stack-2%EA%B0%9C%EB%A1%9C-Queue-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0 - 2개의 스택으로 큐를 구현하는 방법
+// 참고: https://ryu-e.tistory.com/96 - 2개의 큐로 스택을 구현하는 방법
