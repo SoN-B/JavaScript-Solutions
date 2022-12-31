@@ -60,6 +60,33 @@ function isBalanced(s) {
     else return 'NO';
 }
 
+// function isBalanced(s) {
+//     var result = 'YES';
+//     var stack = [];
+//     s.split('').forEach(function(val) {
+//         switch(val) {
+//             case '{':
+//                 stack.push('}'); // 여는 괄호는 닫는괄호로 고쳐 반대로 넣는생각
+//                 break;
+//             case '[':
+//                 stack.push(']');
+//                 break;
+//             case '(':
+//                 stack.push(')');
+//                 break;
+//             default:
+//                 var test = stack.pop();
+//                 if (val !== test) { // 현요소와 pop한 요소 비교
+//                     result = 'NO';
+//                 }    
+//         }
+//     })
+//     if (stack.length) {
+//         result = 'NO';
+//     }
+//     return result;
+// }
+
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
