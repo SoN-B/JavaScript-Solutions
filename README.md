@@ -12,4 +12,4 @@
 
 > **hackerrank**
 
-<img src="./readme/problem-solving.png" width="260" height="150">
+<img src="./readme/problem-solving.png" width="130" height="130">
