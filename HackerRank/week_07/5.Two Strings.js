@@ -48,6 +48,22 @@ function twoStrings(s1, s2) {
     return 'NO';
 }
 
+// function twoStrings(s1, s2) {
+//     let hashMap = {};
+
+//     for(let char of s1){
+//         hashMap[char] = true;
+//     }
+//     Ex. { h: true, e: true, l: true, o: true }
+
+//     for(let char of s2){
+//         if(char in hashMap ){
+//             return 'YES';
+//         }
+//     }
+//     return 'NO';
+// }
+
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
