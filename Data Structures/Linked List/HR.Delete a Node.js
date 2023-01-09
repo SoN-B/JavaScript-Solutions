@@ -80,16 +80,18 @@ function printSinglyLinkedList(node, sep, ws) {
  * }
  *
  */
-function deleteNode(llist, position) {
-    let real = llist;
+function deleteNode(llist, position) { // 링크드리스트의 헤드요소, position을 받는다
+    let real = llist; // 링크드리스트 헤드요소의 주소값 얕은복사
     if(position === 0) {
-        real = llist.next;
+        real = llist.next; 
+        // 맨앞요소 삭제시 그냥, 그다음요소를 반환시켜주면 됨
+        // 그럼 그값부터 printSinglyLinkedList함수가 출려해줄테니
     } else {
-        for(let i = 0; i < position - 1; i++) llist = llist.next;
+        for(let i = 0; i < position - 1; i++) llist = llist.next; // 삭제시킬 요소 이전까지
         llist.next = llist.next.next;
     }
     
-    return real;
+    return real; // 나머지는 그냥 그대로 헤드요소값 반환
 }
 
 function main() {
