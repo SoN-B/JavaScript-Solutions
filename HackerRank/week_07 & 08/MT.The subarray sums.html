@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * numbers 배열을 받아, 각 쿼리안의 l부터 r까지의 숫자들의 합을 구하는 문제
+         * 단, l, r은 인덱스번호가 아닌 실제 몇번째 숫자인지를 나타냄
+         * 단, 그 범위내의 0의 개수에 따라 +x 가 됨
+         * queries = [[l,r,x]];
+         *
+         * 일반문제처럼 for문 2개 쓰면 시간초과되니, 
+         * 인덱스의 어느 지점에서든 이전 숫자의 합계를 가지게 하고, 이를 이용하여 시간복잡도를 줄여야함
+         * 0의 개수도 마찬가지
+         * 
+         * Ex) numbers = [1,0,0,4,5], query = [2,4,5];
+         * 숫자의 합계를 저장할 배열 sums = [1,1,1,5,10];
+         * 0의 개수를 저장할 배열 zero = [0,1,2,2,2];
+         * 
+         * query에서 2부터 4번째 숫자라고하니, [0,0,4]을 가져오고
+         * 이때까지의 합계를 이용하여 [(1),1,1,(5),10] -> 5 - 1 = 4;
+         * 이때까지의 0의 개수를 이용하여 4 + 2*5 = 14가됨 = 시간복잡도를 줄임 O(N^2) -> O(2N)
+         */
+
+        function findSum(numbers, queries) {
+            let sums = [numbers[0]], zero = [], sum = 0, result = [];
+            numbers[0] === 0 ? zero.push(1) : zero.push(0);
+
+            for(let i = 1; i < numbers.length; i++) {
+                sums.push(sums[i - 1] + numbers[i]); // 이전 수 + 현재 수
+                numbers[i] === 0 ? zero.push(zero[i - 1] + 1) : zero.push(zero[i - 1]);
+            }
+            
+            for(let i = 0; i < queries.length; i++) {
+                if(sums[queries[i][0] - 2] == undefined) {
+                    result.push(sums[queries[i][1] - 1] + zero[queries[i][1] - 1] * queries[i][2]);
+                } else {
+                    result.push(sums[queries[i][1] - 1] - sums[queries[i][0] - 2] + zero[queries[i][1] - 1] * queries[i][2]);
+                }
+            }
+
+            return result;
+        }
+
+        let numbers = [5,0,15,20,10];
+        let queries = [[2,5,5], [1,2,4]];
+
+        console.log(findSum(numbers, queries));
+    </script>
+</body>
+</html>
