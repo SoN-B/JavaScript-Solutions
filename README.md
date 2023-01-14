@@ -6,8 +6,9 @@
 - **BJ** : BaekJoon
 - **PM** : ProgramMers
 
-## 🏆 Badges
+## 🏆 Badges & Certificate
 
 > **hackerrank**
 
 <img src="./readme/problem-solving.png" width="130" height="130">
+<img src="./readme/problem-solving-basic.PNG" width="130" height="170" onclick="javascript:location.href='https://www.hackerrank.com/certificates/iframe/d168434e81da';">
