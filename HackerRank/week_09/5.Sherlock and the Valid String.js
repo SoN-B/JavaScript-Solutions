@@ -85,6 +85,16 @@ function isValid(s) {
     } else return 'NO';
 }
 
+// 정렬후, splice를 이용하면 간단하지 않을까?
+// function isValid(s) {
+//     let fr = [], ar = s.split('').sort();
+//     while(ar.length > 0) {
+//         fr.push(ar.splice(0, ar.lastIndexOf(ar[0]) + 1).length);
+//     };
+//     const dif = fr.filter(n=> n!=fr[0]);
+//     return dif.length < 2 && Math.abs(dif-fr[0]) < 2 || dif < 2?'YES':'NO';
+// };
+
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
