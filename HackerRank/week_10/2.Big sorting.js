@@ -33,7 +33,7 @@ function readLine() {
 
 function bigSorting(unsorted) {
     let nums = [];
-    for(let i = 0; i < unsorted.length; i++) nums.push(BigInt(unsorted[i]));   
+    for(let i = 0; i < unsorted.length; i++) nums.push(BigInt(unsorted[i]));
     
     function quickSort(array, start, end) {
         if (start >= end) return;
