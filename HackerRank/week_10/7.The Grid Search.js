@@ -52,13 +52,13 @@ function readLine() {
  */
 
 function gridSearch(G, P) {
-    let startIndex;
+    let startIndex
     
-    for(let i=0; i<G.length; i++) {
-        for(let j=0; j<G[0].length; j++) {
+    for(let i=0; i<G.length; i++) { // 전체 row수
+        for(let j=0; j<G[0].length; j++) { // 전체 column수
             if(G[i].includes(P[0], j)) {
-                startIndex=G[i].indexOf(P[0], j)
-                for(let k=1; k<P.length; k++) {
+                startIndex=G[i].indexOf(P[0], j) // 첫 패턴 요소
+                for(let k=1; k<P.length; k++) { // 그다음 패턴 요소들
                     if(G[i+k].indexOf(P[k], startIndex)!==startIndex){
                         break;
                     } else {
