@@ -11,3 +11,16 @@
 > **hackerrank**
 
 <img src="./readme/problem-solving.png" width="130" height="130">
+
+## 🎓 Certificates
+
+> **hackerrank**
+
+<p align="left">
+  <a href="https://www.hackerrank.com/certificates/d168434e81da">
+    <img src="./readme/problem-solving-basic.PNG" width="120" height="155">
+  </a>
+  <a href="https://www.hackerrank.com/certificates/4c5e42c24533">
+    <img src="./readme/problem-solving-Intermediate.PNG" width="120" height="155">
+  </a> 👈 Click the icons
+</p>
