@@ -5,6 +5,7 @@
 - **HR** : HackerRank
 - **BJ** : BaekJoon
 - **PM** : ProgramMers
+- **CT** : CodingTest
 
 ## 🏆 Badges
 
